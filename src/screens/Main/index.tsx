@@ -1,3 +1,6 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -10,6 +13,7 @@
 
 import React, {useCallback, useState} from 'react';
 import {
+  Alert,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -20,9 +24,14 @@ import {
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import DropDownPicker from 'react-native-dropdown-picker';
+import axios from 'axios';
+import moment from 'moment';
+
 const Main = () => {
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleSwitch = () => {
+    parseDataTextMode()
+  }
   const [isEnabledClockMode1, setIsEnabledClockMode1] = useState(false);
   const toggleSwitchClockMode1 = () =>
     setIsEnabledClockMode1(previousState => !previousState);
@@ -32,14 +41,18 @@ const Main = () => {
     setIsEnabledClockMode2(previousState => !previousState);
   const [checked, setChecked] = React.useState('first');
   const [line, setLine] = useState('');
+  const [line2, setLine2] = useState('');
   const [openSpeed, setOpenSpeed] = useState(false);
   const [openColor, setOpenColor] = useState(false);
   const [value, setValue] = useState(null);
   const [valueSpeed, setValueSpeed] = useState(null);
   const [valueColor, setValueColor] = useState(null);
   const [itemsColor, setItemsColor] = useState([
-    {label: 'Red', value: 'R'},
-    {label: 'Blue', value: 'B'},
+    {label: 'Red', value: '1'},
+    {label: 'Green', value: '2'},
+    {label: 'Blue', value: '3'},
+    {label: 'White', value: '4'},
+    {label: 'RGB', value: '5'},
   ]);
   const [itemsSpeed, setItemsSpeed] = useState([
     {label: '1', value: '1'},
@@ -52,6 +65,30 @@ const Main = () => {
   const onColorOpen = useCallback(() => {
     setOpenSpeed(false);
   }, []);
+  const parseDataTextMode = ()=>{
+    const dynamic = toggleCheckBox?1:0;
+    axios.get('http://192.168.1.1:80/text',{params:{
+      data:`{"command":${1},"data":[{"line1": "${line}"},{"line2": "${line2}"},{"speed": ${valueSpeed}},{"color": ${valueColor}},{"dynamic": ${dynamic}}]}`
+    }}).then(()=>{
+      Alert.alert('Thông báo','Gửi dữ liệu thành công')
+    })
+  }
+  const parseDataWeatherMode = ()=>{
+    const time = moment();
+    axios.get('http://192.168.1.1:80/weather',{params:{
+      data:`{"command": 2,"data":[{"gio": "${time.hours()}"},{"phut": "${time.minutes()}"},{"giay": "${time.seconds()}"},{"ngay": "${time.date()}"},{"thang": "${time.month()}"},{"nam": "${time.year()}"},{"dow": "${time.day()}"}]}`
+    }}).then(()=>{
+      Alert.alert('Thông báo','Gửi dữ liệu thành công')
+    })
+  }
+  const parseDataTimeMode = ()=>{
+    const time = moment();
+    axios.get('http://192.168.1.1:80/time',{params:{
+      data:`{"command": 2,"data":[{"gio": "${time.hours()}"},{"phut": "${time.minutes()}"},{"giay": "${time.seconds()}"},{"ngay": "${time.date()}"},{"thang": "${time.month()}"},{"nam": "${time.year()}"},{"dow": "${time.day()}"}]}`
+    }}).then(()=>{
+      Alert.alert('Thông báo','Gửi dữ liệu thành công')
+    })
+  }
   return (
     <SafeAreaView style={{flex: 1}}>
       <View
@@ -93,7 +130,7 @@ const Main = () => {
         </Text>
         <TextInput
           // value={email}
-          onChangeText={setLine}
+          onChangeText={setLine2}
           // defaultValue={dataUser?.email}
           style={{
             backgroundColor: 'white',
@@ -179,8 +216,8 @@ const Main = () => {
             paddingHorizontal: 4,
             borderRadius: 8,
           }}
-          onPress={toggleSwitch}>
-          <Text style={styles.textTitle}>Clock Mode 1</Text>
+          onPress={parseDataTimeMode}>
+          <Text style={styles.textTitle}>Time Mode</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
@@ -188,8 +225,8 @@ const Main = () => {
             paddingHorizontal: 4,
             borderRadius: 8,
           }}
-          onPress={toggleSwitch}>
-          <Text style={styles.textTitle}>Clock Mode 2</Text>
+          onPress={parseDataWeatherMode}>
+          <Text style={styles.textTitle}>Weather Mode</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
