@@ -3,16 +3,16 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'ConnectModuleWifi' do
+target 'rnlehieubase' do
   config = use_native_modules!
 
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
-    :hermes_enabled => false
+    :hermes_enabled => true
   )
 
-  target 'ConnectModuleWifiTests' do
+  target 'rnlehieubaseTests' do
     inherit! :complete
     # Pods for testing
   end
