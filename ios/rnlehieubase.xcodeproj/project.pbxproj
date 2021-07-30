@@ -14,6 +14,7 @@
 		4685FF3D39417073B38F27F8 /* libPods-rnlehieubase-rnlehieubaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F904F8E50F861053CAC438 /* libPods-rnlehieubase-rnlehieubaseTests.a */; };
 		4B72D83364873EBAAE944605 /* libPods-rnlehieubase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F713275EEF1E9CA90EC99C6 /* libPods-rnlehieubase.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		FBCB6C1526B35D6700E7CA4B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB6C1426B35D6700E7CA4B /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		8AABE3641CCFA7240BCA8387 /* Pods-rnlehieubase-rnlehieubaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnlehieubase-rnlehieubaseTests.debug.xcconfig"; path = "Target Support Files/Pods-rnlehieubase-rnlehieubaseTests/Pods-rnlehieubase-rnlehieubaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F713275EEF1E9CA90EC99C6 /* libPods-rnlehieubase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnlehieubase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FBCB6C1326B35D6600E7CA4B /* rnlehieubase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rnlehieubase-Bridging-Header.h"; sourceTree = "<group>"; };
+		FBCB6C1426B35D6700E7CA4B /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +89,14 @@
 		13B07FAE1A68108700A75B9A /* rnlehieubase */ = {
 			isa = PBXGroup;
 			children = (
+				FBCB6C1426B35D6700E7CA4B /* File.swift */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				FBCB6C1326B35D6600E7CA4B /* rnlehieubase-Bridging-Header.h */,
 			);
 			name = rnlehieubase;
 			sourceTree = "<group>";
@@ -114,7 +119,6 @@
 				8AABE3641CCFA7240BCA8387 /* Pods-rnlehieubase-rnlehieubaseTests.debug.xcconfig */,
 				1BDD9996AFD2F431C7363AD2 /* Pods-rnlehieubase-rnlehieubaseTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +212,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -412,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				FBCB6C1526B35D6700E7CA4B /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8AABE3641CCFA7240BCA8387 /* Pods-rnlehieubase-rnlehieubaseTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BDD9996AFD2F431C7363AD2 /* Pods-rnlehieubase-rnlehieubaseTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = rnlehieubaseTests/Info.plist;
@@ -487,6 +494,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = rnlehieubase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,6 +506,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = rnlehieubase;
+				SWIFT_OBJC_BRIDGING_HEADER = "rnlehieubase-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -512,6 +521,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = rnlehieubase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,6 +533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = rnlehieubase;
+				SWIFT_OBJC_BRIDGING_HEADER = "rnlehieubase-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
