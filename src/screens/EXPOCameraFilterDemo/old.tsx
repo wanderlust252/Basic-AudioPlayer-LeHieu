@@ -31,32 +31,44 @@ precision highp float;
 uniform sampler2D cameraTexture;
 in vec2 uv;
 out vec4 fragColor;
-
+void modifyColor(vec4 color){
+  color.r=max(min(color.r,1.0),0.0);
+  color.g=max(min(color.g,1.0),0.0);
+  color.b=max(min(color.b,1.0),0.0);
+  color.a=max(min(color.a,1.0),0.0);
+}
 void main() {
-
-  fragColor = vec4(texture(cameraTexture, uv).rgb+0.5, 1.0);
+  vec4 color = texture(cameraTexture, uv);
+  vec4 deltaColor = color + vec4(0.1, 0.1, 0.0, 0.0); // warm colors
+  modifyColor(deltaColor);
+  fragColor=deltaColor;
+  // fragColor = vec4(texture(cameraTexture, uv).rgb+0.5, 1.0);
 }`;
 interface State {
   zoom: number;
   type: any;
   warm: boolean;
+  key0: number;
 }
 
 // See: https://github.com/expo/expo/pull/10229#discussion_r490961694
 // eslint-disable-next-line @typescript-eslint/ban-types
+let a = false;
 class GLCameraScreen extends React.Component<{}, State> {
   static title = 'Expo.Camera integration';
 
   readonly state: State = {
     zoom: 0,
     type: Camera.Constants.Type.back,
-    warm: true,
+    warm: false,
+    key0: 0,
   };
 
   _rafID?: number;
   camera?: Camera;
   glView?: GL.GLView;
   texture?: any;
+  contextRef?: GL.ExpoWebGLRenderingContext;
 
   componentWillUnmount() {
     if (this._rafID !== undefined) {
@@ -69,11 +81,17 @@ class GLCameraScreen extends React.Component<{}, State> {
 
     return this.glView!.createCameraTextureAsync(this.camera!);
   }
-
+  toggleFilter = () => {
+    a = !a;
+    // this.setState({ warm: !this.state.warm }, () => {
+    //   this.setState({ key0: this.state.key0 + 1 });
+    // });
+  };
   onContextCreate = async (gl: GL.ExpoWebGLRenderingContext) => {
     // Create texture asynchronously
     this.texture = await this.createCameraTexture();
     const cameraTexture = this.texture;
+    this.contextRef = gl;
 
     // Compile vertex and fragment shaders
     const vertShader = gl.createShader(gl.VERTEX_SHADER)!;
@@ -86,6 +104,7 @@ class GLCameraScreen extends React.Component<{}, State> {
 
     // Link, use program, save and enable attributes
     const program = gl.createProgram()!;
+
     gl.attachShader(program, vertShader);
     gl.attachShader(program, fragShader);
     gl.linkProgram(program);
@@ -103,7 +122,6 @@ class GLCameraScreen extends React.Component<{}, State> {
     gl.bufferData(gl.ARRAY_BUFFER, verts, gl.STATIC_DRAW);
 
     // Bind 'position' attribute
-    console.log('positionAttrib', positionAttrib);
 
     gl.vertexAttribPointer(positionAttrib, 2, gl.FLOAT, false, 0, 0);
 
@@ -116,7 +134,49 @@ class GLCameraScreen extends React.Component<{}, State> {
     // Render loop
     const loop = () => {
       this._rafID = requestAnimationFrame(loop);
+      // console.log('a', a);
+      if (a) {
+        console.log('if a ', a);
 
+        // Compile vertex and fragment shaders
+        const vertShader = gl.createShader(gl.VERTEX_SHADER)!;
+        gl.shaderSource(vertShader, vertShaderSource);
+        gl.compileShader(vertShader);
+
+        const fragShader = gl.createShader(gl.FRAGMENT_SHADER)!;
+        gl.shaderSource(fragShader, fragShaderSourceWarm);
+        gl.compileShader(fragShader);
+
+        // Link, use program, save and enable attributes
+        const program = gl.createProgram()!;
+
+        gl.attachShader(program, vertShader);
+        gl.attachShader(program, fragShader);
+        gl.linkProgram(program);
+        gl.validateProgram(program);
+
+        gl.useProgram(program);
+
+        const positionAttrib = gl.getAttribLocation(program, 'position');
+        gl.enableVertexAttribArray(positionAttrib);
+
+        // Create, bind, fill buffer
+        const buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        const verts = new Float32Array([-2, 0, 0, -2, 2, 2]);
+        gl.bufferData(gl.ARRAY_BUFFER, verts, gl.STATIC_DRAW);
+
+        // Bind 'position' attribute
+
+        gl.vertexAttribPointer(positionAttrib, 2, gl.FLOAT, false, 0, 0);
+
+        // Set 'cameraTexture' uniform
+        gl.uniform1i(gl.getUniformLocation(program, 'cameraTexture'), 0);
+
+        // Activate unit 0
+        gl.activeTexture(gl.TEXTURE0);
+        a = false;
+      }
       // Clear
       gl.clearColor(0, 0, 1, 1);
       // tslint:disable-next-line: no-bitwise
@@ -156,12 +216,15 @@ class GLCameraScreen extends React.Component<{}, State> {
     return (
       <View style={styles.container}>
         <Camera
+          // style={{ height: 300, width: 300 }}
           style={StyleSheet.absoluteFill}
           type={this.state.type}
           zoom={this.state.zoom}
           ref={(ref) => (this.camera = ref!)}
         />
         <GLView
+          key={this.state.key0}
+          // style={{ height: 500, width: 300 }}
           style={StyleSheet.absoluteFill}
           onContextCreate={this.onContextCreate}
           ref={(ref) => (this.glView = ref!)}
@@ -174,12 +237,7 @@ class GLCameraScreen extends React.Component<{}, State> {
           <TouchableOpacity style={styles.button} onPress={this.zoomIn}>
             <Text>Zoom in</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              // this.setState({ warm: false });
-              getGl;
-            }}>
+          <TouchableOpacity style={styles.button} onPress={this.toggleFilter}>
             <Text>Zoom out</Text>
           </TouchableOpacity>
         </View>

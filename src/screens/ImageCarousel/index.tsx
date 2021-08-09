@@ -64,11 +64,12 @@ const ImageCarousel: FunctionComponent<Props> = ({}) => {
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar hidden />
-      <FlatList
+      <Animated.FlatList
         ref={topRef}
         data={data}
         keyExtractor={(item) => item.id + '_list'}
         pagingEnabled
+        bounces={false}
         horizontal
         showsHorizontalScrollIndicator={false}
         snapToInterval={width}
