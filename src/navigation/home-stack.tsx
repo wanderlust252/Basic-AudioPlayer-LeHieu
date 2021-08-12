@@ -1,26 +1,19 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import EXPOCameraFilterDemo from '@/screens/EXPOCameraFilterDemo';
-export type HomeStackParamList = {
-  Home: undefined;
-  TimerAnimation: undefined;
-  PizzaCarousel: undefined;
-  TinderCard: undefined;
-  LoginForm: undefined;
-  FloatingActionButton: undefined;
-  DonutChartDemo: undefined;
-  FilterImageDemo: undefined;
-  EXPOCameraFilterDemo: undefined;
-  HappyBirthday: undefined;
-  ImageCarousel: undefined;
-  AnimationExample: undefined;
-  ListSortedAnimation: undefined;
-};
+import Example from '@/screens/Example';
+import { HomeStackParamList } from './types';
+import ExampleWithSpring from '@/screens/ExampleWithSpring';
+import ExamplePanResponder from '@/screens/ExamplePanResponder';
+import ExampleWithDecay from '@/screens/ExampleWithDecay';
+
 const HomeStack = createDrawerNavigator<HomeStackParamList>();
 const HomeNavigator: React.FC = () => {
   return (
-    <HomeStack.Navigator screenOptions={{ header: () => null }} initialRouteName="EXPOCameraFilterDemo">
-      <HomeStack.Screen name={'EXPOCameraFilterDemo'} component={EXPOCameraFilterDemo} />
+    <HomeStack.Navigator screenOptions={{ header: () => null }} initialRouteName="Example">
+      <HomeStack.Screen name={'Example'} component={Example} />
+      <HomeStack.Screen name={'ExampleWithSpring'} component={ExampleWithSpring} />
+      <HomeStack.Screen name={'ExamplePanResponder'} component={ExamplePanResponder} />
+      <HomeStack.Screen name={'ExampleWithDecay'} component={ExampleWithDecay} />
     </HomeStack.Navigator>
   );
 };
