@@ -14,7 +14,7 @@ const shaders = Shaders.create({
         float test = factor;
         vec2 step = 1.0 / resolution;
 
-        vec3 texA = texture2D( t, uv + vec2(-step.x, -step.y) * 1.5 ).rgb;
+        vec3 texA = texture2D( t, uv + vec2(-step.x, -step.y) * 0.2 ).rgb;
         vec3 texB = texture2D( t, uv + vec2( step.x, -step.y) * 1.5 ).rgb;
         vec3 texC = texture2D( t, uv + vec2(-step.x,  step.y) * 1.5 ).rgb;
         vec3 texD = texture2D( t, uv + vec2( step.x,  step.y) * 1.5 ).rgb;
@@ -32,6 +32,7 @@ const shaders = Shaders.create({
 export const DefaultValue = 0;
 
 export default function Sharpen({ factor = DefaultValue, width, height, children: t }) {
+  console.log('Sharpen ', factor);
   return (
     <Node
       shader={shaders.sharpen}

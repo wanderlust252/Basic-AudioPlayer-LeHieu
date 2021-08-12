@@ -20,7 +20,7 @@ const shaders = Shaders.create({
 
 export const DefaultValue = 0;
 
-export default function Sepia({ factor = DefaultValue, children: t }) {
+const Sepia = ({ factor = DefaultValue, children: t }) => {
   const sepia = mixArrays(
     [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
     [0.3, 0.3, 0.3, 0, 0.6, 0.6, 0.6, 0, 0.1, 0.1, 0.1, 0, 0.2, 0, -0.2, 1],
@@ -36,4 +36,5 @@ export default function Sepia({ factor = DefaultValue, children: t }) {
       }}
     />
   );
-}
+};
+export default Sepia;

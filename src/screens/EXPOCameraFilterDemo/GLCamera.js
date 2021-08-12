@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { GLSL, Node, Shaders } from 'gl-react';
 import { Camera } from 'expo-camera';
+import { Platform } from 'react-native';
 console.log('Shaders', Shaders);
 const shaders = Shaders.create({
   YFlip: {
@@ -11,7 +12,7 @@ precision highp float;
 varying vec2 uv;
 uniform sampler2D t;
 void main(){
-  gl_FragColor=texture2D(t, vec2( 1.0 -uv.x, 1.0 - uv.y));
+  gl_FragColor=texture2D(t, vec2( ${Platform.OS === 'android' ? `1.0 -uv.x` : `uv.x`}, 1.0 - uv.y));
 }`,
   },
 });
@@ -50,8 +51,8 @@ export default class GLCamera extends Component {
         }}>
         <Camera
           style={{
-            width: 400,
-            height: 533.33,
+            width: '100%',
+            height: '100%',
           }}
           ratio="4:3"
           type={type}

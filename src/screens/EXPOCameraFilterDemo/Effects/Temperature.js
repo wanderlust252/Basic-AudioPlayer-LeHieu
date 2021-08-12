@@ -39,8 +39,8 @@ const shaders = Shaders.create({
 
         gl_FragColor = vec4(outColor, 1.0);
       }
-    `
-  }
+    `,
+  },
 });
 
 export const DefaultValue = 6500;
@@ -54,5 +54,5 @@ export default function Temperature({ factor = DefaultValue, children: t }) {
         t,
       }}
     />
-  )
+  );
 }

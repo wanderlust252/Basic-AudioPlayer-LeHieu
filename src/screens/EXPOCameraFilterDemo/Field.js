@@ -6,6 +6,7 @@ import Slider from '@react-native-community/slider';
 const styles = StyleSheet.create({
   field: {
     flexDirection: 'row',
+    backgroundColor: 'rgba(255,255,255,0.3)',
     alignItems: 'center',
   },
   title: {
