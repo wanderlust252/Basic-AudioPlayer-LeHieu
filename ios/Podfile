@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
 platform :ios, '11.0'
 
-target 'hisoftcamera' do
+target 'Reanimated2LH' do
   use_unimodules!
   config = use_native_modules!
 
@@ -13,7 +13,7 @@ target 'hisoftcamera' do
     :hermes_enabled => true
   )
 
-  target 'hisoftcameraTests' do
+  target 'Reanimated2LHTests' do
     inherit! :complete
     # Pods for testing
   end

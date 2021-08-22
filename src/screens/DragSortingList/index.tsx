@@ -70,7 +70,7 @@ function objectMove(object: { [x: string]: any }, from: any, to: number) {
 
   return newObject;
 }
-function Song({ artist, cover, title }: { artist: any; cover: any; title: any }) {
+function Song({ cover, title }: { artist: any; cover: any; title: any }) {
   return (
     <View
       style={{
