@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface Reanimated2LHTests : XCTestCase
+@interface AudioPlayerTests : XCTestCase
 
 @end
 
-@implementation Reanimated2LHTests
+@implementation AudioPlayerTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

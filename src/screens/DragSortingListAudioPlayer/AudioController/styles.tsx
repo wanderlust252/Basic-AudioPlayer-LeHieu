@@ -27,4 +27,5 @@ export default StyleSheet.create({
     elevation: 5,
   },
   slider: { width: '100%', height: 40 },
+  controller: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 30 },
 });

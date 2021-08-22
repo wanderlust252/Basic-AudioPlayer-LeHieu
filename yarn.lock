@@ -2135,11 +2135,6 @@ acorn@^8.2.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.4.1.tgz#56c36251fc7cabc7096adc18f05afe814321a28c"
   integrity sha512-asabaBSkEKosYKMITunzX177CXxQ4Q8BSSzMTKD+FefUhipQC70gfW5SiUDhYQ3vk8G+81HqQk7Fv9OXwwn9KA==
 
-add@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
-  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
-
 agent-base@6:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-6.0.2.tgz#49fff58577cfee3f37176feab4c22e00f86d7f77"
@@ -3365,11 +3360,6 @@ domutils@^1.5.1, domutils@^1.7.0:
     dom-serializer "0"
     domelementtype "1"
 
-dooboolab-welcome@^1.3.0:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/dooboolab-welcome/-/dooboolab-welcome-1.3.2.tgz#4928595312f0429b4ea1b485ba8767bae6acdab7"
-  integrity sha512-2NbMaIIURElxEf/UAoVUFlXrO+7n/FRhLCiQlk4fkbGRh9cJ3/f8VEMPveR9m4Ug2l2Zey+UCXjd6EcBqHJ5bw==
-
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -3848,11 +3838,6 @@ expo-asset@~8.3.3:
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
 
-expo-blur@^9.0.3:
-  version "9.0.3"
-  resolved "https://registry.yarnpkg.com/expo-blur/-/expo-blur-9.0.3.tgz#5095b5bd04d000f73b351d0e4736767b86b49bbd"
-  integrity sha512-7jMqzo53eg5t9Uc1Tg+yGu9lKL9the4CWAQO0kC6YMhrsDiB13mwOUesC+IScHDTSUKNMGcHI8kN+OmvEWfPig==
-
 expo-constants@~11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-11.0.1.tgz#8a33d9702d03289ab68d6de2bbeb2bbc9654734c"
@@ -3877,11 +3862,6 @@ expo-file-system@~8.1.0:
   integrity sha512-xb4roeU8CotW8t3LkmsrliNbgFpY2KB+3sW1NnujnH39pFVwCd/kfujCYzRauj8aUy/HhSq+3xGkQTpC7pSjVw==
   dependencies:
     uuid "^3.4.0"
-
-expo-haptics@^10.1.0:
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/expo-haptics/-/expo-haptics-10.1.0.tgz#2ef5f0c3442f57844f7a7a961d922872e4ea9a71"
-  integrity sha512-2rpixkP3LSCwaJAmbbs0CSqbY7lSk7Ytay4UAYWg3YiJ05My7+MGMPbQJARyAMI5JQNuzcdsZN74btSusBvgYQ==
 
 expo-image-loader@~2.2.0:
   version "2.2.0"
@@ -6939,22 +6919,10 @@ react-native-svg@^12.1.1:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
 
-react-native-switch-toggle@^2.1.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-switch-toggle/-/react-native-switch-toggle-2.2.1.tgz#1a7f88a54bded38e6e34988ddac6ba05ccf0adbf"
-  integrity sha512-Y/RQ1Pb/KDVZhBSNjc16LKtUi7MGZb0MYxouZLj/THpiSQLsy5pUyTwbIKRjNuZDNSxmMDXyRX1QfLt+oup4Uw==
-  dependencies:
-    dooboolab-welcome "^1.3.0"
-
 react-native-track-player@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-native-track-player/-/react-native-track-player-2.0.3.tgz#a2648e2468f8502359b4678655573501d46f0c64"
   integrity sha512-XV+92szbnf4FcByzfT62fN+iT9o0WhoMgDFl63Jf4gk6vw6VOFchPOoHKHW0XqgnO4vIit8CFc8u945l8vSSuQ==
-
-react-native-typical@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-native-typical/-/react-native-typical-1.1.2.tgz#185066cd8cddc424b740ac70eaab590785294631"
-  integrity sha512-qLeTE+22Fr+C9AoZ9R9EDaLrptYk5KEx0X5hSOQqgnzCe7rzsqvel8GIPPrtjqOTwqsIPuDzRQ4SYhi9em//fw==
 
 react-native-unimodules@^0.14.6:
   version "0.14.6"

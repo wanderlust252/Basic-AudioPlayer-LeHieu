@@ -29,6 +29,8 @@ export default StyleSheet.create({
     resizeMode: 'cover',
     backgroundColor: 'white',
     borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   artist: {
     fontSize: 16,

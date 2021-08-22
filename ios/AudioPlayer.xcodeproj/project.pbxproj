@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* Reanimated2LHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* Reanimated2LHTests.m */; };
-		101FFBB0905BC3C31AEF9D86 /* libPods-Reanimated2LH-Reanimated2LHTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCF767E9F06365540748B67 /* libPods-Reanimated2LH-Reanimated2LHTests.a */; };
+		00E356F31AD99517003FC87E /* AudioPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AudioPlayerTests.m */; };
+		101FFBB0905BC3C31AEF9D86 /* libPods-AudioPlayer-AudioPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCF767E9F06365540748B67 /* libPods-AudioPlayer-AudioPlayerTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		68980B3E338011822B990440 /* libPods-Reanimated2LH.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C9CC69AF709BE4F2E5FF39 /* libPods-Reanimated2LH.a */; };
+		68980B3E338011822B990440 /* libPods-AudioPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C9CC69AF709BE4F2E5FF39 /* libPods-AudioPlayer.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FBAE145426C3C5F30027586A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAE145326C3C5F30027586A /* Assets.xcassets */; };
 		FBCB6C1526B35D6700E7CA4B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB6C1426B35D6700E7CA4B /* File.swift */; };
@@ -24,30 +24,30 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Reanimated2LH;
+			remoteInfo = AudioPlayer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* Reanimated2LHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Reanimated2LHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* AudioPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* Reanimated2LHTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reanimated2LHTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Reanimated2LH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reanimated2LH.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Reanimated2LH/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Reanimated2LH/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Reanimated2LH/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Reanimated2LH/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Reanimated2LH/main.m; sourceTree = "<group>"; };
-		2F8AA8D341EB40F391762EB4 /* Pods-Reanimated2LH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reanimated2LH.debug.xcconfig"; path = "Target Support Files/Pods-Reanimated2LH/Pods-Reanimated2LH.debug.xcconfig"; sourceTree = "<group>"; };
-		6CCF767E9F06365540748B67 /* libPods-Reanimated2LH-Reanimated2LHTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reanimated2LH-Reanimated2LHTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Reanimated2LH/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84FEEC931119F204352D29A5 /* Pods-Reanimated2LH-Reanimated2LHTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reanimated2LH-Reanimated2LHTests.debug.xcconfig"; path = "Target Support Files/Pods-Reanimated2LH-Reanimated2LHTests/Pods-Reanimated2LH-Reanimated2LHTests.debug.xcconfig"; sourceTree = "<group>"; };
-		86C9CC69AF709BE4F2E5FF39 /* libPods-Reanimated2LH.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reanimated2LH.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D473E03DC2E99CBB354A5B0 /* Pods-Reanimated2LH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reanimated2LH.release.xcconfig"; path = "Target Support Files/Pods-Reanimated2LH/Pods-Reanimated2LH.release.xcconfig"; sourceTree = "<group>"; };
-		D5867EF5CBDFDE0B7FD0D9CF /* Pods-Reanimated2LH-Reanimated2LHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reanimated2LH-Reanimated2LHTests.release.xcconfig"; path = "Target Support Files/Pods-Reanimated2LH-Reanimated2LHTests/Pods-Reanimated2LH-Reanimated2LHTests.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* AudioPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AudioPlayer/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AudioPlayer/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AudioPlayer/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AudioPlayer/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AudioPlayer/main.m; sourceTree = "<group>"; };
+		2F8AA8D341EB40F391762EB4 /* Pods-AudioPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer.debug.xcconfig"; path = "Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		6CCF767E9F06365540748B67 /* libPods-AudioPlayer-AudioPlayerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AudioPlayer-AudioPlayerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AudioPlayer/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84FEEC931119F204352D29A5 /* Pods-AudioPlayer-AudioPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer-AudioPlayerTests.debug.xcconfig"; path = "Target Support Files/Pods-AudioPlayer-AudioPlayerTests/Pods-AudioPlayer-AudioPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		86C9CC69AF709BE4F2E5FF39 /* libPods-AudioPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AudioPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D473E03DC2E99CBB354A5B0 /* Pods-AudioPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer.release.xcconfig"; path = "Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		D5867EF5CBDFDE0B7FD0D9CF /* Pods-AudioPlayer-AudioPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer-AudioPlayerTests.release.xcconfig"; path = "Target Support Files/Pods-AudioPlayer-AudioPlayerTests/Pods-AudioPlayer-AudioPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FBAE145326C3C5F30027586A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FBCB6C1326B35D6600E7CA4B /* Reanimated2LH-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reanimated2LH-Bridging-Header.h"; sourceTree = "<group>"; };
+		FBCB6C1326B35D6600E7CA4B /* AudioPlayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
 		FBCB6C1426B35D6700E7CA4B /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				101FFBB0905BC3C31AEF9D86 /* libPods-Reanimated2LH-Reanimated2LHTests.a in Frameworks */,
+				101FFBB0905BC3C31AEF9D86 /* libPods-AudioPlayer-AudioPlayerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,20 +64,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68980B3E338011822B990440 /* libPods-Reanimated2LH.a in Frameworks */,
+				68980B3E338011822B990440 /* libPods-AudioPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* Reanimated2LHTests */ = {
+		00E356EF1AD99517003FC87E /* AudioPlayerTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* Reanimated2LHTests.m */,
+				00E356F21AD99517003FC87E /* AudioPlayerTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = Reanimated2LHTests;
+			path = AudioPlayerTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -88,7 +88,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Reanimated2LH */ = {
+		13B07FAE1A68108700A75B9A /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				FBCB6C1426B35D6700E7CA4B /* File.swift */,
@@ -98,17 +98,17 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				FBCB6C1326B35D6600E7CA4B /* Reanimated2LH-Bridging-Header.h */,
+				FBCB6C1326B35D6600E7CA4B /* AudioPlayer-Bridging-Header.h */,
 			);
-			name = Reanimated2LH;
+			name = AudioPlayer;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				86C9CC69AF709BE4F2E5FF39 /* libPods-Reanimated2LH.a */,
-				6CCF767E9F06365540748B67 /* libPods-Reanimated2LH-Reanimated2LHTests.a */,
+				86C9CC69AF709BE4F2E5FF39 /* libPods-AudioPlayer.a */,
+				6CCF767E9F06365540748B67 /* libPods-AudioPlayer-AudioPlayerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,10 +116,10 @@
 		4DB9F87623C171113DC8AD00 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2F8AA8D341EB40F391762EB4 /* Pods-Reanimated2LH.debug.xcconfig */,
-				9D473E03DC2E99CBB354A5B0 /* Pods-Reanimated2LH.release.xcconfig */,
-				84FEEC931119F204352D29A5 /* Pods-Reanimated2LH-Reanimated2LHTests.debug.xcconfig */,
-				D5867EF5CBDFDE0B7FD0D9CF /* Pods-Reanimated2LH-Reanimated2LHTests.release.xcconfig */,
+				2F8AA8D341EB40F391762EB4 /* Pods-AudioPlayer.debug.xcconfig */,
+				9D473E03DC2E99CBB354A5B0 /* Pods-AudioPlayer.release.xcconfig */,
+				84FEEC931119F204352D29A5 /* Pods-AudioPlayer-AudioPlayerTests.debug.xcconfig */,
+				D5867EF5CBDFDE0B7FD0D9CF /* Pods-AudioPlayer-AudioPlayerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				FBAE145326C3C5F30027586A /* Assets.xcassets */,
-				13B07FAE1A68108700A75B9A /* Reanimated2LH */,
+				13B07FAE1A68108700A75B9A /* AudioPlayer */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* Reanimated2LHTests */,
+				00E356EF1AD99517003FC87E /* AudioPlayerTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				4DB9F87623C171113DC8AD00 /* Pods */,
@@ -150,8 +150,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Reanimated2LH.app */,
-				00E356EE1AD99517003FC87E /* Reanimated2LHTests.xctest */,
+				13B07F961A680F5B00A75B9A /* AudioPlayer.app */,
+				00E356EE1AD99517003FC87E /* AudioPlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* Reanimated2LHTests */ = {
+		00E356ED1AD99517003FC87E /* AudioPlayerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Reanimated2LHTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "AudioPlayerTests" */;
 			buildPhases = (
 				B1B253D026EDDE52DE08B112 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -175,14 +175,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = Reanimated2LHTests;
-			productName = Reanimated2LHTests;
-			productReference = 00E356EE1AD99517003FC87E /* Reanimated2LHTests.xctest */;
+			name = AudioPlayerTests;
+			productName = AudioPlayerTests;
+			productReference = 00E356EE1AD99517003FC87E /* AudioPlayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Reanimated2LH */ = {
+		13B07F861A680F5B00A75B9A /* AudioPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Reanimated2LH" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "AudioPlayer" */;
 			buildPhases = (
 				60C429E2F54A77FB92950323 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -197,9 +197,9 @@
 			);
 			dependencies = (
 			);
-			name = Reanimated2LH;
-			productName = Reanimated2LH;
-			productReference = 13B07F961A680F5B00A75B9A /* Reanimated2LH.app */;
+			name = AudioPlayer;
+			productName = AudioPlayer;
+			productReference = 13B07F961A680F5B00A75B9A /* AudioPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Reanimated2LH" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "AudioPlayer" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -232,8 +232,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Reanimated2LH */,
-				00E356ED1AD99517003FC87E /* Reanimated2LHTests */,
+				13B07F861A680F5B00A75B9A /* AudioPlayer */,
+				00E356ED1AD99517003FC87E /* AudioPlayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,15 +279,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH-Reanimated2LHTests/Pods-Reanimated2LH-Reanimated2LHTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer-AudioPlayerTests/Pods-AudioPlayer-AudioPlayerTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH-Reanimated2LHTests/Pods-Reanimated2LH-Reanimated2LHTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer-AudioPlayerTests/Pods-AudioPlayer-AudioPlayerTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH-Reanimated2LHTests/Pods-Reanimated2LH-Reanimated2LHTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer-AudioPlayerTests/Pods-AudioPlayer-AudioPlayerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		60C429E2F54A77FB92950323 /* [CP] Check Pods Manifest.lock */ = {
@@ -305,7 +305,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reanimated2LH-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AudioPlayer-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -318,15 +318,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH/Pods-Reanimated2LH-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH/Pods-Reanimated2LH-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH/Pods-Reanimated2LH-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8923A50EB8D250E3316D3FA1 /* [CP] Embed Pods Frameworks */ = {
@@ -335,15 +335,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH-Reanimated2LHTests/Pods-Reanimated2LH-Reanimated2LHTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer-AudioPlayerTests/Pods-AudioPlayer-AudioPlayerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH-Reanimated2LHTests/Pods-Reanimated2LH-Reanimated2LHTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer-AudioPlayerTests/Pods-AudioPlayer-AudioPlayerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH-Reanimated2LHTests/Pods-Reanimated2LH-Reanimated2LHTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer-AudioPlayerTests/Pods-AudioPlayer-AudioPlayerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B1B253D026EDDE52DE08B112 /* [CP] Check Pods Manifest.lock */ = {
@@ -361,7 +361,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reanimated2LH-Reanimated2LHTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AudioPlayer-AudioPlayerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -374,15 +374,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH/Pods-Reanimated2LH-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH/Pods-Reanimated2LH-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reanimated2LH/Pods-Reanimated2LH-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -411,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* Reanimated2LHTests.m in Sources */,
+				00E356F31AD99517003FC87E /* AudioPlayerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +430,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Reanimated2LH */;
+			target = 13B07F861A680F5B00A75B9A /* AudioPlayer */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -438,7 +438,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84FEEC931119F204352D29A5 /* Pods-Reanimated2LH-Reanimated2LHTests.debug.xcconfig */;
+			baseConfigurationReference = 84FEEC931119F204352D29A5 /* Pods-AudioPlayer-AudioPlayerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -446,7 +446,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Reanimated2LHTests/Info.plist;
+				INFOPLIST_FILE = AudioPlayerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,18 +460,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reanimated2LH.app/Reanimated2LH";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioPlayer.app/AudioPlayer";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5867EF5CBDFDE0B7FD0D9CF /* Pods-Reanimated2LH-Reanimated2LHTests.release.xcconfig */;
+			baseConfigurationReference = D5867EF5CBDFDE0B7FD0D9CF /* Pods-AudioPlayer-AudioPlayerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = Reanimated2LHTests/Info.plist;
+				INFOPLIST_FILE = AudioPlayerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,20 +485,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reanimated2LH.app/Reanimated2LH";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioPlayer.app/AudioPlayer";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F8AA8D341EB40F391762EB4 /* Pods-Reanimated2LH.debug.xcconfig */;
+			baseConfigurationReference = 2F8AA8D341EB40F391762EB4 /* Pods-AudioPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 44DZTJZ28X;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Reanimated2LH/Info.plist;
+				INFOPLIST_FILE = AudioPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,9 +509,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dev.Reanimated2LH;
-				PRODUCT_NAME = Reanimated2LH;
-				SWIFT_OBJC_BRIDGING_HEADER = "Reanimated2LH-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.AudioPlayer;
+				PRODUCT_NAME = AudioPlayer;
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioPlayer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -520,14 +520,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D473E03DC2E99CBB354A5B0 /* Pods-Reanimated2LH.release.xcconfig */;
+			baseConfigurationReference = 9D473E03DC2E99CBB354A5B0 /* Pods-AudioPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 44DZTJZ28X;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Reanimated2LH/Info.plist;
+				INFOPLIST_FILE = AudioPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,9 +538,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dev.Reanimated2LH;
-				PRODUCT_NAME = Reanimated2LH;
-				SWIFT_OBJC_BRIDGING_HEADER = "Reanimated2LH-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.AudioPlayer;
+				PRODUCT_NAME = AudioPlayer;
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioPlayer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -672,7 +672,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Reanimated2LHTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "AudioPlayerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -681,7 +681,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Reanimated2LH" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "AudioPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -690,7 +690,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Reanimated2LH" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "AudioPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

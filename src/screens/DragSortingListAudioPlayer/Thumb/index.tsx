@@ -16,7 +16,7 @@ const Thumb: FunctionComponent<Props> = ({ source, artist, title, onPick }) => {
         {source && source.uri ? (
           <Image style={[styles.image]} source={source} />
         ) : (
-          <TouchableOpacity onPress={onPick} style={[styles.image, { alignItems: 'center', justifyContent: 'center' }]}>
+          <TouchableOpacity onPress={onPick} style={styles.image}>
             <FontAwesome5 name={'plus'} size={30} />
             <Text style={styles.textPicker}>Chọn bài</Text>
           </TouchableOpacity>

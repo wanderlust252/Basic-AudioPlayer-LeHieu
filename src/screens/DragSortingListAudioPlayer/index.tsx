@@ -1,14 +1,14 @@
 import { StatusBar } from 'react-native';
 import React, { FunctionComponent, useCallback, useState } from 'react';
-import { ExampleProps } from '@/navigation/types';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
 import DocumentPicker from 'react-native-document-picker';
 import TrackPlayer, { Capability, Track } from 'react-native-track-player';
-import MusicInfo from '@/forkModule/expo-music-info';
+import MusicInfo from 'expo-music-info';
 import Thumb from './Thumb';
 import SoundPlayer from 'react-native-sound-player';
 import AudioController from './AudioController';
+import { DragSortingListAudioPlayerProps } from '@/navigation/types';
 TrackPlayer.updateOptions({
   stopWithApp: false,
   capabilities: [Capability.Play, Capability.Pause],
@@ -17,11 +17,10 @@ TrackPlayer.updateOptions({
 export interface TrackInfo extends Track {
   thumbBase64?: string;
 }
-const DragSortingListAudioPlayer: FunctionComponent<ExampleProps> = () => {
+const DragSortingListAudioPlayer: FunctionComponent<DragSortingListAudioPlayerProps> = () => {
   const [list, setList] = useState<TrackInfo>({
     url: '',
   });
-  const [loading, setLoading] = useState<boolean>(false);
 
   const pickFile = useCallback(() => {
     const pickingAsync = async () => {
@@ -32,13 +31,6 @@ const DragSortingListAudioPlayer: FunctionComponent<ExampleProps> = () => {
           mode: 'import',
           copyTo: 'cachesDirectory',
         });
-        setLoading(true);
-        console.log(
-          res.uri,
-          res.type, // mime type
-          res.name,
-          res.size,
-        );
         const metadata = await MusicInfo.getMusicInfoAsync(res.uri, {
           title: true,
           artist: true,
@@ -62,21 +54,12 @@ const DragSortingListAudioPlayer: FunctionComponent<ExampleProps> = () => {
         await TrackPlayer.setupPlayer({});
 
         setList(track);
-      } catch (err) {
-        if (DocumentPicker.isCancel(err)) {
-          // User cancelled the picker, exit any dialogs or menus and move on
-        } else {
-          throw err;
-        }
-      } finally {
-        setLoading(false);
-      }
+      } catch (err) {}
     };
     pickingAsync();
   }, []);
   const play = useCallback(() => {
     const playAsync = async () => {
-      // Pick a single file
       try {
         TrackPlayer.play();
       } catch (err) {
@@ -87,7 +70,6 @@ const DragSortingListAudioPlayer: FunctionComponent<ExampleProps> = () => {
   }, []);
   const pause = useCallback(() => {
     const pauseAsync = async () => {
-      // Pick a single file
       try {
         TrackPlayer.pause();
       } catch (err) {
@@ -97,15 +79,14 @@ const DragSortingListAudioPlayer: FunctionComponent<ExampleProps> = () => {
     pauseAsync();
   }, []);
   const seek = useCallback((time) => {
-    const pauseAsync = async () => {
-      // Pick a single file
+    const seekAsync = async () => {
       try {
         TrackPlayer.seekTo(time);
       } catch (err) {
         console.log(err);
       }
     };
-    pauseAsync();
+    seekAsync();
   }, []);
   return (
     <>
@@ -119,9 +100,6 @@ const DragSortingListAudioPlayer: FunctionComponent<ExampleProps> = () => {
             title={list.title || 'Unknown'}
           />
           <AudioController onSeek={seek} duration={list.duration || 0} onPause={pause} onPlay={play} />
-          {/* <TouchableOpacity onPress={pickFile} style={{}}>
-            <Text style={{ color: 'white' }}>CLICK</Text>
-          </TouchableOpacity> */}
         </SafeAreaView>
       </SafeAreaProvider>
     </>

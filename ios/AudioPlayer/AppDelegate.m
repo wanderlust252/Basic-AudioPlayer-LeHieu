@@ -39,7 +39,7 @@ static void InitializeFlipper(UIApplication *application) {
   self.moduleRegistryAdapter = [[UMModuleRegistryAdapter alloc] initWithModuleRegistryProvider:[[UMModuleRegistryProvider alloc] init]];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"Reanimated2LH"
+                                                   moduleName:@"AudioPlayer"
                                             initialProperties:nil];
 
   if (@available(iOS 13.0, *)) {

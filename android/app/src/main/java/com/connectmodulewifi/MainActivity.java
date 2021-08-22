@@ -14,6 +14,6 @@ public class MainActivity extends ReactActivity {
   }
   @Override
   protected String getMainComponentName() {
-    return "Reanimated2LH";
+    return "AudioPlayer";
   }
 }

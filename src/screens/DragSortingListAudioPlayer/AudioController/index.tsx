@@ -20,7 +20,6 @@ const AudioController: FunctionComponent<Props> = ({ duration, onPlay, onPause, 
   const [playing, setPlaying] = useState(false);
   const [sliding, setSliding] = useState(false);
   const progress = useProgress();
-  const sliderRef = useRef<SliderRef>();
   const valueSlider = useMemo(() => {
     return sliding ? undefined : progress.position;
   }, [progress.position, sliding]);
@@ -35,7 +34,6 @@ const AudioController: FunctionComponent<Props> = ({ duration, onPlay, onPause, 
   return (
     <View style={styles.container}>
       <Slider
-        ref={sliderRef}
         value={valueSlider}
         onSlidingStart={() => {
           setSliding(true);
@@ -58,13 +56,12 @@ const AudioController: FunctionComponent<Props> = ({ duration, onPlay, onPause, 
         </Text>
       </View>
       <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginTop: 30,
-          height: controllerHeight,
-        }}>
+        style={[
+          styles.controller,
+          {
+            height: controllerHeight,
+          },
+        ]}>
         <Ionicons color={'#E94560'} size={iconHeight} name={'md-play-skip-back-outline'} />
         <TouchableWithoutFeedback onPressIn={onPlaying}>
           <View style={{}}>
