@@ -5,12 +5,16 @@ export type TracksContextState = {
   currentIndex: number;
   setTrackIndex: (newState: number) => void;
   addTracks: (newState: TrackInfo[]) => void;
+  isNotLast: boolean;
+  isNotFirst: boolean;
 };
 const contextDefaultValues: TracksContextState = {
   tracks: [],
   currentIndex: -1,
   setTrackIndex: () => 0,
   addTracks: () => 0,
+  isNotFirst: false,
+  isNotLast: false,
 };
 
 export const TracksContext = createContext<TracksContextState>(contextDefaultValues);
@@ -24,6 +28,9 @@ const TracksProvider: FunctionComponent = ({ children }) => {
   const setTrackIndex = (newState: number) => {
     setCurrentIndex(newState);
   };
+  const isNotLast = currentIndex < tracks.length - 1;
+  const isNotFirst = currentIndex > 0;
+
   return (
     <TracksContext.Provider
       value={{
@@ -31,6 +38,8 @@ const TracksProvider: FunctionComponent = ({ children }) => {
         currentIndex,
         setTrackIndex,
         addTracks,
+        isNotFirst,
+        isNotLast,
       }}>
       {children}
     </TracksContext.Provider>

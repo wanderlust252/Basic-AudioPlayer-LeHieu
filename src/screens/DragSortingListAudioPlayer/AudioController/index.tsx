@@ -15,7 +15,7 @@ const playHeight = controllerHeight * 0.9;
 let sliding = false;
 const events = [Event.PlaybackState, Event.PlaybackError, Event.RemoteNext, Event.PlaybackQueueEnded];
 const AudioController: FunctionComponent<Props> = ({}) => {
-  const { tracks, currentIndex, setTrackIndex } = useContext(TracksContext);
+  const { tracks, currentIndex, setTrackIndex, isNotLast, isNotFirst } = useContext(TracksContext);
 
   const [playerState, setPlayerState] = useState<State>();
   const progress = useProgress();
@@ -24,9 +24,7 @@ const AudioController: FunctionComponent<Props> = ({}) => {
   }, [progress.position]);
   const duration = currentIndex >= 0 ? tracks[currentIndex].duration || 0 : 0;
   const playing = playerState === State.Playing;
-  const isNotLast = currentIndex < tracks.length - 1;
-  const isNotFirst = currentIndex > 0;
-  const isEnded = progress.position + 0.5 >= progress.duration;
+  const isEnded = progress.position + 1 >= progress.duration;
   useEffect(() => {
     if (isEnded) {
       const pauseAsync = async () => {
@@ -144,7 +142,7 @@ const AudioController: FunctionComponent<Props> = ({}) => {
         <Text style={styles.text}>
           {str_pad_left(Math.floor(duration / 60) + '', '0', 2) +
             ':' +
-            str_pad_left(Math.floor((duration % 60) / 60) + '', '0', 2)}
+            str_pad_left(Math.floor(duration % 60) + '', '0', 2)}
         </Text>
       </View>
       <View

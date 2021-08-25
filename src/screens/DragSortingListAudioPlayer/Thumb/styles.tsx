@@ -24,11 +24,11 @@ export default StyleSheet.create({
     marginBottom: 5,
   },
   image: {
-    height: height * 0.4,
+    height: height * 0.3,
     width: height * 0.3,
     resizeMode: 'cover',
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: height * 0.15,
     alignItems: 'center',
     justifyContent: 'center',
   },

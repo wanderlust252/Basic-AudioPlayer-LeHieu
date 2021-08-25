@@ -1,9 +1,9 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeStackParamList } from './types';
 import DragSortingListAudioPlayer from '@/screens/DragSortingListAudioPlayer';
 
-const HomeStack = createDrawerNavigator<HomeStackParamList>();
+const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 const HomeNavigator: React.FC = () => {
   return (
     <HomeStack.Navigator screenOptions={{ header: () => null }} initialRouteName="DragSortingListAudioPlayer">
