@@ -2,7 +2,7 @@ import { StatusBar } from 'react-native';
 import React, { FunctionComponent } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
-import TrackPlayer, { Capability, Event, Track, useTrackPlayerEvents } from 'react-native-track-player';
+import TrackPlayer, { Capability, Track } from 'react-native-track-player';
 import Thumb from './Thumb';
 import AudioController from './AudioController';
 import { DragSortingListAudioPlayerProps } from '@/navigation/types';
@@ -15,7 +15,6 @@ TrackPlayer.updateOptions({
 export interface TrackInfo extends Track {
   thumbBase64?: string;
 }
-const events = [Event.PlaybackState, Event.PlaybackError, Event.RemoteNext, Event.PlaybackQueueEnded];
 
 const DragSortingListAudioPlayer: FunctionComponent<DragSortingListAudioPlayerProps> = () => {
   return (

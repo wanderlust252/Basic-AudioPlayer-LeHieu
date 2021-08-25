@@ -13,7 +13,6 @@ const controllerHeight = height / 10;
 const iconHeight = controllerHeight * 0.65;
 const playHeight = controllerHeight * 0.9;
 let sliding = false;
-// Subscribing to the following events inside MyComponent
 const events = [Event.PlaybackState, Event.PlaybackError, Event.RemoteNext, Event.PlaybackQueueEnded];
 const AudioController: FunctionComponent<Props> = ({}) => {
   const { tracks, currentIndex, setTrackIndex } = useContext(TracksContext);
@@ -162,7 +161,6 @@ const AudioController: FunctionComponent<Props> = ({}) => {
           size={iconHeight}
           name={'md-play-skip-back-outline'}
         />
-        {/* <TouchableWithoutFeedback> */}
         <View style={{}}>
           {playing ? (
             <Ionicons onPress={pause} color={'#E94560'} size={playHeight} name={'md-pause-circle'} />
@@ -172,7 +170,6 @@ const AudioController: FunctionComponent<Props> = ({}) => {
             <Ionicons onPress={play} color={'#E94560'} size={playHeight} name={'md-play-circle'} />
           )}
         </View>
-        {/* </TouchableWithoutFeedback> */}
         <Ionicons
           style={{ opacity: isNotLast ? 1 : 0.2 }}
           onPress={forward}

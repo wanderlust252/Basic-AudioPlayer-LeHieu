@@ -48,7 +48,6 @@ const Thumb: FunctionComponent<Props> = ({}) => {
     pickingAsync();
   }, [addTracks, setTrackIndex]);
   const hasMusic = tracks.length > 0;
-  // const source: ImageURISource = { uri: tracks[currentIndex].thumbBase64 };
   const title = hasMusic ? tracks[currentIndex].title : 'Unknown';
   const artist = hasMusic ? tracks[currentIndex].artist : 'Unknown';
   return (
