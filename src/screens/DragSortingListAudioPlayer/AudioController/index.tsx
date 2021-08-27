@@ -97,6 +97,7 @@ const AudioController: FunctionComponent<Props> = ({}) => {
   const forward = useCallback(() => {
     const forwardAsync = async () => {
       try {
+        await TrackPlayer.play();
         await TrackPlayer.skipToNext();
         const a = await TrackPlayer.getCurrentTrack();
         setTrackIndex(a);
