@@ -1,4 +1,4 @@
-# Project rác của LeHieu
+# App phát nhạc phần 2
 CÀI ĐẶT:
 - git clone về
 - chạy lệnh yarn
