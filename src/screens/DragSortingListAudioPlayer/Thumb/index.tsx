@@ -1,5 +1,5 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import React, { FunctionComponent, useCallback, useContext, useEffect, useRef } from 'react';
+import React, { FunctionComponent, useCallback, useContext } from 'react';
 import styles from './styles';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import SoundPlayer from 'react-native-sound-player';
@@ -8,19 +8,21 @@ import DocumentPicker from 'react-native-document-picker';
 import TrackPlayer from 'react-native-track-player';
 import { TracksContext } from '@/context/tracksContext';
 import Animated, {
-  Easing,
+  cancelAnimation,
   interpolate,
+  runOnJS,
   useAnimatedStyle,
   useSharedValue,
   withRepeat,
   withSequence,
+  withSpring,
   withTiming,
 } from 'react-native-reanimated';
 import { Directions, FlingGestureHandler, State } from 'react-native-gesture-handler';
 
 type Props = any;
 const Thumb: FunctionComponent<Props> = ({}) => {
-  const { addTracks, tracks, currentIndex, setTrackIndex, isNotFirst, isNotLast } = useContext(TracksContext);
+  const { addTracks, tracks, currentIndex, setTrackIndex, forward, previous } = useContext(TracksContext);
   const spinAnim = useSharedValue(0);
   const pickFile = useCallback(() => {
     const pickingAsync = async () => {
@@ -29,8 +31,7 @@ const Thumb: FunctionComponent<Props> = ({}) => {
       try {
         const res = await DocumentPicker.pickMultiple({
           type: [DocumentPicker.types.audio],
-          mode: 'import',
-          copyTo: 'cachesDirectory',
+          mode: 'open',
         });
         for (const iterator of res) {
           const metadata = await MusicInfo.getMusicInfoAsync(iterator.uri, {
@@ -54,63 +55,47 @@ const Thumb: FunctionComponent<Props> = ({}) => {
         await TrackPlayer.setupPlayer({});
         addTracks(tmpTracks);
         setTrackIndex(0);
+        spinAnim.value = withRepeat(
+          withTiming(1, {
+            duration: 10000,
+          }),
+          -1,
+          false,
+        );
       } catch (err) {}
     };
     pickingAsync();
-  }, [addTracks, setTrackIndex]);
+  }, [addTracks, setTrackIndex, spinAnim]);
   const hasMusic = tracks.length > 0;
   const title = hasMusic ? tracks[currentIndex].title : 'Unknown';
   const artist = hasMusic ? tracks[currentIndex].artist : 'Unknown';
-  useEffect(() => {
-    spinAnim.value = withRepeat(
-      withTiming(1, {
-        duration: 10000,
-      }),
-      -1,
-      false,
-    );
-  }, [spinAnim]);
+  // useEffect(() => {
+
+  // }, [spinAnim]);
   const styleImageAnim = useAnimatedStyle(() => {
     const rotate = interpolate(spinAnim.value, [-1, 0, 1], [-360, 0, 360]);
     return {
       transform: [{ rotate: `${rotate}deg` }],
     };
   });
-  const forward = useCallback(() => {
-    const forwardAsync = async () => {
-      try {
-        await TrackPlayer.skipToNext();
-        const a = await TrackPlayer.getCurrentTrack();
-        setTrackIndex(a);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    if (isNotLast) forwardAsync();
-  }, [isNotLast, setTrackIndex]);
-  const previous = useCallback(() => {
-    const previousAsync = async () => {
-      try {
-        await TrackPlayer.play();
-        await TrackPlayer.skipToPrevious();
-        const a = await TrackPlayer.getCurrentTrack();
-        setTrackIndex(a);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    if (isNotFirst) previousAsync();
-  }, [isNotFirst, setTrackIndex]);
   return (
     <FlingGestureHandler
       direction={Directions.LEFT}
       onHandlerStateChange={({ nativeEvent }) => {
         if (nativeEvent.state === State.END) {
           console.log('LEFT');
-          forward();
-          // if (index === data.length - 1) {
-          //   return;
-          // }
+          spinAnim.value = withSequence(
+            withSpring(0, {}, () => {
+              runOnJS(forward)();
+            }),
+            withRepeat(
+              withTiming(1, {
+                duration: 10000,
+              }),
+              -1,
+              false,
+            ),
+          );
         }
       }}>
       <FlingGestureHandler
@@ -118,13 +103,21 @@ const Thumb: FunctionComponent<Props> = ({}) => {
         onHandlerStateChange={({ nativeEvent }) => {
           if (nativeEvent.state === State.END) {
             console.log('RIGHT');
-            previous();
-            // if (index === data.length - 1) {
-            //   return;
-            // }
+            spinAnim.value = withSequence(
+              withSpring(0, {}, () => {
+                runOnJS(previous)();
+              }),
+              withRepeat(
+                withTiming(1, {
+                  duration: 10000,
+                }),
+                -1,
+                false,
+              ),
+            );
           }
         }}>
-        <View style={styles.container}>
+        <View style={[styles.container]}>
           <Animated.View style={[styles.shadowImage]}>
             {hasMusic ? (
               <Animated.View style={[{}, styleImageAnim]}>
