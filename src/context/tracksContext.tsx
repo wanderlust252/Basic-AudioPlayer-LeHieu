@@ -29,7 +29,6 @@ const contextDefaultValues: TracksContextState = {
   openModal: () => 0,
   pause: () => 0,
   replay: () => 0,
-
   isNotFirst: false,
   isNotLast: false,
   playing: false,
@@ -61,6 +60,7 @@ const TracksProvider: FunctionComponent = ({ children }) => {
   }, []);
   const progress = useProgress();
   const openModal = () => {
+    // ham nay chua dung toi. Chac ai do se can
     bottomSheetRef.current?.expand();
   };
   const addTracks = (newState: TrackInfo[]) => {
@@ -123,12 +123,6 @@ const TracksProvider: FunctionComponent = ({ children }) => {
   };
   const skip = async (trackIndex: number) => {
     try {
-      // const statement = await TrackPlayer.getState();
-      // if (statement === State.Playing) {
-      //   await TrackPlayer.pause();
-      // } else {
-      //   await TrackPlayer.play();
-      // }
       await TrackPlayer.skip(trackIndex);
       setTrackIndex(trackIndex);
     } catch (err) {

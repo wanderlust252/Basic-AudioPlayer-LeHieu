@@ -8,7 +8,6 @@ import DocumentPicker from 'react-native-document-picker';
 import TrackPlayer from 'react-native-track-player';
 import { TracksContext } from '@/context/tracksContext';
 import Animated, {
-  cancelAnimation,
   interpolate,
   runOnJS,
   useAnimatedStyle,
@@ -18,7 +17,13 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
-import { Directions, FlingGestureHandler, State } from 'react-native-gesture-handler';
+import {
+  Directions,
+  FlingGestureHandler,
+  FlingGestureHandlerEventPayload,
+  HandlerStateChangeEvent,
+  State,
+} from 'react-native-gesture-handler';
 
 type Props = any;
 const Thumb: FunctionComponent<Props> = ({}) => {
@@ -78,45 +83,43 @@ const Thumb: FunctionComponent<Props> = ({}) => {
       transform: [{ rotate: `${rotate}deg` }],
     };
   });
+  const onFlingLeft: (event: HandlerStateChangeEvent<FlingGestureHandlerEventPayload>) => void = ({ nativeEvent }) => {
+    if (nativeEvent.state === State.END) {
+      console.log('LEFT');
+      spinAnim.value = withSequence(
+        withSpring(0, {}, () => {
+          runOnJS(forward)();
+        }),
+        withRepeat(
+          withTiming(1, {
+            duration: 10000,
+          }),
+          -1,
+          false,
+        ),
+      );
+    }
+  };
+  const onFlingRight: (event: HandlerStateChangeEvent<FlingGestureHandlerEventPayload>) => void = ({ nativeEvent }) => {
+    if (nativeEvent.state === State.END) {
+      console.log('RIGHT');
+      spinAnim.value = withSequence(
+        withSpring(0, {}, () => {
+          runOnJS(previous)();
+        }),
+        withRepeat(
+          withTiming(1, {
+            duration: 10000,
+          }),
+          -1,
+          false,
+        ),
+      );
+    }
+  };
   return (
-    <FlingGestureHandler
-      direction={Directions.LEFT}
-      onHandlerStateChange={({ nativeEvent }) => {
-        if (nativeEvent.state === State.END) {
-          console.log('LEFT');
-          spinAnim.value = withSequence(
-            withSpring(0, {}, () => {
-              runOnJS(forward)();
-            }),
-            withRepeat(
-              withTiming(1, {
-                duration: 10000,
-              }),
-              -1,
-              false,
-            ),
-          );
-        }
-      }}>
-      <FlingGestureHandler
-        direction={Directions.RIGHT}
-        onHandlerStateChange={({ nativeEvent }) => {
-          if (nativeEvent.state === State.END) {
-            console.log('RIGHT');
-            spinAnim.value = withSequence(
-              withSpring(0, {}, () => {
-                runOnJS(previous)();
-              }),
-              withRepeat(
-                withTiming(1, {
-                  duration: 10000,
-                }),
-                -1,
-                false,
-              ),
-            );
-          }
-        }}>
+    <FlingGestureHandler direction={Directions.LEFT} onHandlerStateChange={onFlingLeft}>
+      <FlingGestureHandler direction={Directions.RIGHT} onHandlerStateChange={onFlingRight}>
         <View style={[styles.container]}>
           <Animated.View style={[styles.shadowImage]}>
             {hasMusic ? (
